@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Tank",
+    "image_url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f0/Tank_Icon.png"
+  },
+  {
+    "name": "Fighter",
+    "image_url": "https://static.wikia.nocookie.net/mobile-legends/images/1/1a/Fighter_Icon.png"
+  },
+  {
+    "name": "Assassin",
+    "image_url": "https://static.wikia.nocookie.net/mobile-legends/images/3/3f/Assassin_Icon.png"
+  },
+  {
+    "name": "Marksman",
+    "image_url": "https://static.wikia.nocookie.net/mobile-legends/images/1/10/Marksman_Icon.png"
+  },
+  {
+    "name": "Mage",
+    "image_url": "https://static.wikia.nocookie.net/mobile-legends/images/5/53/Mage_Icon.png"
+  },
+  {
+    "name": "Support",
+    "image_url": "https://static.wikia.nocookie.net/mobile-legends/images/f/ff/Support_Icon.png"
+  }
+]
