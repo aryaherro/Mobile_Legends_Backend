@@ -133,7 +133,7 @@ export default class HeroController {
         "host"
       )}/images/hero/${fileName}`;
     }
-    if (hero?.image) {
+    if (hero?.image != "") {
       const filepath = `./public/images/hero/${hero?.image}`;
       fs.unlinkSync(filepath);
     }
@@ -164,7 +164,7 @@ export default class HeroController {
           id: req.params.id,
         },
       });
-      if (hero?.image != null) {
+      if (hero?.image != "") {
         const filepath = `./public/images/hero/${hero?.image}`;
         fs.unlinkSync(filepath);
       }

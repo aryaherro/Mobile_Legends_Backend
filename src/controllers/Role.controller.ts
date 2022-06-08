@@ -80,8 +80,9 @@ export default class RoleController {
     });
     if (!role) res.status(404).json({ message: "Role Not Found" });
 
-    let fileName: string | undefined | null = role?.image;
-    let image_url: string | undefined | null = role?.image_url;
+    const name = req.body.name;
+    let fileName: string | undefined = role?.image;
+    let image_url: string | undefined = role?.image_url;
     const file: any = req.files?.file;
 
     if (!req.files?.file) {
@@ -106,11 +107,10 @@ export default class RoleController {
         "host"
       )}/images/role/${fileName}`;
     }
-    if (role?.image) {
+    if (role?.image != "") {
       const filepath = `./public/images/role/${role?.image}`;
       fs.unlinkSync(filepath);
     }
-    const name = req.body.name;
     try {
       await Role.update(
         { name: name, image: fileName, image_url: image_url },
@@ -140,7 +140,7 @@ export default class RoleController {
           id: req.params.id,
         },
       });
-      if (role?.image) {
+      if (role?.image != "") {
         const filepath = `./public/images/role/${role?.image}`;
         fs.unlinkSync(filepath);
       }
