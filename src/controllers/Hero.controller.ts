@@ -102,16 +102,14 @@ export default class HeroController {
       },
     });
     if (!hero) res.status(404).json({ message: "Hero Not Found" });
-
     const name = req.body.name;
     const release = parseInt(req.body.release);
     const roles = JSON.parse(req.body.roles).map((role: any) => role.value);
-    console.log(roles);
     let fileName: string | undefined = hero?.image;
     let image_url: string | undefined = hero?.image_url;
     const file: any = req.files?.file;
 
-    if (!req.files?.file) {
+    if (!file) {
       fileName = "";
       image_url = "";
       if (req.body.deleted_image === "false") image_url = hero?.image_url;
@@ -133,7 +131,7 @@ export default class HeroController {
         "host"
       )}/images/hero/${fileName}`;
     }
-    if (hero?.image != "") {
+    if (hero?.image!) {
       const filepath = `./public/images/hero/${hero?.image}`;
       fs.unlinkSync(filepath);
     }

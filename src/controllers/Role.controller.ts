@@ -107,7 +107,7 @@ export default class RoleController {
         "host"
       )}/images/role/${fileName}`;
     }
-    if (role?.image != "") {
+    if (role?.image!) {
       const filepath = `./public/images/role/${role?.image}`;
       fs.unlinkSync(filepath);
     }
